@@ -13,7 +13,7 @@ SECRET_KEY = 'django-insecure-279o1qbz10w19wf1ym@#!+eo3f0i6w%9%_r63w=czl=s%am$8o
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['happis.pythonanywhere.com',]
 
 
 # Application definition
@@ -108,9 +108,10 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
+STATIC_ROOT = '/home/happis/news-platform/static'
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_ROOT = '/home/happis/news-platform/media'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

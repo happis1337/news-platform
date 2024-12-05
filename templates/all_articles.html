@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <div class="row g-4">
+        {% for article in articles %}
+            <div class="col-md-3">
+                <div class="card h-100">
+                    <img src="{{ article.image.url }}" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <a href="{% url 'details' article.slug %}">{{ article.title }}</a>
+                        <small><i class="fa fa-clock"> {{ article.reading_time }} read</i> </small>
+                        <small><i class="fa fa-eye"> {{ article.views }} Views</i></small>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

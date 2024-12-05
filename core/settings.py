@@ -11,7 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-279o1qbz10w19wf1ym@#!+eo3f0i6w%9%_r63w=czl=s%am$8o'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['happis.pythonanywhere.com',]
 
@@ -107,8 +107,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [BASE_DIR / 'static']
-STATIC_ROOT = '/home/happis/news-platform/static'
+
+if DEBUG:
+    STATICFILES_DIRS = [BASE_DIR / 'static']
+else:
+    STATIC_ROOT = '/home/happis/news-platform/static'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = '/home/happis/news-platform/media'
